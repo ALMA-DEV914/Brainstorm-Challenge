@@ -19,13 +19,13 @@ main{
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 20px;
-}
-h2 {
-    color: #f0fff0;
+    background-color: blanchedalmond;
 }
 .page-title {
     font-size: 40px;
+    
 }
+
 p{
     line-height: 1.5;
     font-size: 22px;
