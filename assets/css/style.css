@@ -1,0 +1,28 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+main{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.header{
+   width: 50%;
+   text-align: center;
+   margin: 10% auto;
+   background-color: #0889;
+   padding: 30px;
+}
+.page-title {
+    font-size: 35px;
+}
+p{
+    line-height: 1.5;
+    font-size: 22px;
+}
+.btn{
+    color: #fff;
+    background-color: #000;
+    padding: 8px 12px;
+}
