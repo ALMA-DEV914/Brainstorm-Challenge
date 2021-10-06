@@ -6,4 +6,7 @@
 * It will have a clean, polished, and responsive user interface. 
 
 ### My Tasks and Solutions
+* I am required to build a quiz with a timer to answer questions and record their score. So I first built an initial interface of the page template on how my page will be layout.
 
+#### The Deployed Application of the Project
+ https://alma-dev914.github.io/Brainstorm-Challenge/
