@@ -14,8 +14,17 @@ main{
    background-color: #0889;
    padding: 30px;
 }
+.time-score-section{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+h2 {
+    color: #f0fff0;
+}
 .page-title {
-    font-size: 35px;
+    font-size: 40px;
 }
 p{
     line-height: 1.5;
@@ -25,4 +34,12 @@ p{
     color: #fff;
     background-color: #000;
     padding: 8px 12px;
+    margin: 20px auto;
+    border-radius: 5px;
+    font-size: 18px;
+}
+.btn:hover {
+    background-color: #097609;
+    color: #fff;
+    border: 2px solid #fff;
 }
