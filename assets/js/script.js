@@ -17,7 +17,7 @@ function countdown() {
     }
      displayTimer();
 
-  }, 1000);
+  }, 2000);
   
 }
 
