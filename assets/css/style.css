@@ -76,65 +76,48 @@ main{
     background: #000;
     cursor: pointer;
 }
-.info-section {
-    display: none;
-    width: 50%;
-    background: #0cabb1;
-    border-radius: 5px;
-    padding: 20px;
-}
-.info-section .info-title {
-    width: 100%;
-    align-items: center;
-    display: flex;
-    padding: 20px;
-    font-size: 35px;
-    font-weight: 800;
-}
-.info-section .info-list{
-    padding: 15px 35px;
-}
-.info-section .info-list .info {
-    margin: 5px 0;
+p{
+    line-height: 1.5;
     font-size: 22px;
 }
-.info-section .info-list .info span {
-    font-weight: 600px;
-    color: blue;
+#que1 {
+    display: none;
 }
-.info-section .buttons {
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 15px 35px;
-    border-top: 1px solid black;
+.question{
+    font-size: 35px;
 }
-.info-section .buttons button {
-    margin: 0 5px;
-    height: 50px;
-    width: 100px;
-    border: 1px solid black;
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
+.options li{
+    font-size: 22px;
+}
+form {
+    padding: 15px;
+    font-size: 25px;
+    text-align: left;
+    
+}
+form input[type = "submit"], .form-btn{
+    padding: 8px 12px;
+    float: right;
     border-radius: 5px;
-}
-.buttons button.quit{
-    border-color: #000;
-    color: #000;
-    background-color: blanchedalmond;
-}
-.buttons button.restart{
-    border-color: #fff;
+    background: rgb(110, 7, 7);
+    margin: 10px 5px;
     color: #fff;
-    background-color: rgb(13, 13, 14);
+    font-size: 20px;
 }
-.buttons button.quit:hover{
-    background-color:#000;
+.form-btn{
+    padding: 8px 12px;
+    float: right;
+    border-radius: 5px;
+    background: rgb(7, 7, 7);
+    margin: 10px 5px;
     color: #fff;
+    font-size: 20px;
 }
-.buttons button.restart:hover{
-    background-color: #fff;
-    color: #000;
+.form-btn:hover {
+    background-color: rgb(7, 110, 71);
+    color: rgb(250, 244, 244);
+}
+form input[type= "submit"]:hover{
+    background-color: rgb(10, 96, 122);
+    color: rgb(245, 241, 241);
 }

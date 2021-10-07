@@ -8,7 +8,39 @@
     <title>Brainstorm Challenge</title>
 </head>
 <body>
-    <main>
+    <main id="que">
+       <section class="main-header">
+            <div class="time-score-section">
+            <div class="count">
+                <h2></h2>
+                <p id="score"></p>
+            </div>
+            <!--
+            <div class="timer-count">
+                <h2>Timer starts</h2>
+                <p id="countdown"></p>
+                 <p id="timer"></p>
+            </div>
+            </div>
+             -->
+    <article class="page-content">
+        <h1 class="page-title">Brainstorm Challenge<br>
+            <span>Some Rules of this Wizard</span></h1>
+            <div class="info-list">
+            <div class="info">1. You will have only <span>30 seconds</span> to answer each questions.</div>
+            <div class="info">2. You can't select any option once time goes off.</div>
+            <div class="info"> 3. You can't exit the quiz while you're playing</div>
+            <div class="info">4. You can view your score and will be base from your correct answer.</div>
+             </div>
+        <!--start quiz button-->
+    
+        <button class="btn" onclick = myFunction()>Start the Quiz</button>
+        </div>
+    </article>
+    </section>
+    </main>
+
+    <main id="que1">
         <section class="main-header">
             <div class="time-score-section">
             <div class="count">
@@ -16,26 +48,30 @@
                 <p id="score"></p>
             </div>
             <div class="timer-count">
-                <h2>Timer starts</h2>
+                <h2>Timer will starts after 5 seconds</h2>
                 <p id="countdown"></p>
                  <p id="timer"></p>
             </div>
             </div>
      
       <article class="page-content">
-        <h1 class="page-title">Brainstorm Challenge<br>
-            <span>Some Rules of this Wizard</span></h1>
-            <div class="info-list">
-            <div class="info">1. You will have only <span>30 seconds</span> to answer each questions.</div>
-            <div class="info">2. Once you select an answer, you cannot reselect.</div>
-            <div class="info">3. You can't select any option once time goes off.</div>
-            <div class="info"> 4. You can't exit the quiz while you're playing</div>
-            <div class="info">5. You can view your score and will be base from your correct answer.</div>
-             </div>
-        <!--start quiz button-->
+          <div class="info-list">
+        <span class="question">What is HTML stand for?</span>
+       
+        <form action="/action_page.php">
+         <input type="checkbox" id="html"             name="answer1" value="answer1">
+        <label for="answer1">Hello To my Mother in-Law</label><br>
+      <input type="checkbox" id="answer2" name="ans-3" value="answer2">
+      <label for="answer2"> Hyper Telecommuter Mobile loan </label><br>
+     <input type="checkbox" id="answer3" name="ans-3" value="answer3">
+     <label for="answer3"> Hypertext Mark Up Language</label><br><br>
+   <button type="button" class="form-btn">Continue</button>
+    <input type="submit" value="Submit">
+     
+    </form> 
+            
     
-        <button class="btn">Start the Quiz</button>
-        </div>
+    </div>
     </article>
     </section>
     </main>
