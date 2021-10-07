@@ -1,2 +1,3 @@
-var count = [];
-var timerEl = document.getElementById("timer-count");
+var highScore = [];
+var timerEl = document.querySelector("#timer-count");
+
