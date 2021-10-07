@@ -37,7 +37,7 @@ function displayTimer() {
         mainEl.textContent = timer[numberCount];
         numberCount++;
       }
-    }, 1000);
+    }, 2000);
   }
   
   countdown();
