@@ -34,8 +34,7 @@
             <div class="info">5. Each wrong answer you key in, your time will deducted of 5 seconds.</div>
              </div>
         <!--start quiz button-->
-    
-        <button class="btn" onclick = myFunction()>Start the Quiz</button>
+    <button class="btn" onclick = myFunction()>Start the Quiz</button>
         </div>
     </article>
     </section>
@@ -49,33 +48,65 @@
                 <p id="score"></p>
             </div>
             <div class="timer-count">
-                <h2>Timer will starts after 5 seconds</h2>
+                <h2>Timer Starts</h2>
                 <p id="countdown"></p>
                  <p id="timer"></p>
             </div>
             </div>
-     
-      <article class="page-content">
-          <div class="info-list">
-        <span class="question">What is HTML stand for?</span>
-       
-        <form action="/action_page.php">
+
+  <article class="page-content" id="question1">
+      <div class="info-list">
+    <span class="question">What is HTML stand for?</span>
+   
+    <form action="/action_page.php">
          <input type="checkbox" id="html"             name="answer1" value="answer1">
         <label for="answer1">Hello To my Mother in-Law</label><br>
       <input type="checkbox" id="answer2" name="ans-3" value="answer2">
       <label for="answer2"> Hyper Telecommuter Mobile loan </label><br>
      <input type="checkbox" id="answer3" name="ans-3" value="answer3">
      <label for="answer3"> Hypertext Mark Up Language</label><br><br>
-   <button type="button" class="form-btn">Continue</button>
-    <input type="submit" value="Submit">
-     
-    </form> 
-            
-    
-    </div>
-    </article>
-    </section>
-    </main>
+<button type="button" class="form-btn" onclick="myFunction2()">Next</button>
+<input type="submit" value="Submit">
+ </form> 
+</div>
+</article>
+
+<article class="page-content" id="question2">
+    <div class="info-list">
+  <span class="question"> How can you make the letter bigger?</span>
+ 
+<form>
+         <input type="checkbox" id="html"             name="answer1" value="answer1">
+        <label for="answer1">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</label><br>
+      <input type="checkbox" id="answer2" name="ans-3" value="answer2">
+      <label for="answer2"> Lorem ipsum dolor sit amet consectetur adipisicing elit. </label><br>
+     <input type="checkbox" id="answer3" name="ans-3" value="answer3">
+     <label for="answer3"> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</label><br><br>
+<button type="button" class="form-btn" onclick=myFunction3()>Next</button>
+<input type="submit" value="Submit">
+</form> 
+</div>
+</article>
+
+<article class="page-content" id="question3">
+    <div class="info-list">
+  <span class="question">What is property and value to center the content?</span>
+ 
+<form>
+         <input type="checkbox" id="html"             name="answer1" value="answer1">
+        <label for="answer1">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</label><br>
+      <input type="checkbox" id="answer2" name="ans-3" value="answer2">
+      <label for="answer2"> Lorem ipsum dolor sit amet consectetur adipisicing elit. </label><br>
+     <input type="checkbox" id="answer3" name="ans-3" value="answer3">
+     <label for="answer3"> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</label><br><br>
+<button class="form-btn">Next</button>
+<input type="submit" value="Submit">
+</form> 
+</div>
+</article>
+
+</section>
+</main>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>

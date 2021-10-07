@@ -32,6 +32,7 @@ main{
 .page-content{
     margin: 20px auto;
     padding: 15px;
+    
 }
 .page-title {
     font-size: 40px;
@@ -80,7 +81,7 @@ p{
     line-height: 1.5;
     font-size: 22px;
 }
-#que1 {
+#que1, #question2, #question3 {
     display: none;
 }
 .question{
