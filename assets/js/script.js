@@ -23,7 +23,7 @@ var answers = function() {
   }
 }
 function countdown() {
-  var timeLeft = 30;
+  var timeLeft = 60;
 
   // Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
   var timeInterval = setInterval(function() {
@@ -47,6 +47,7 @@ mainEl.setAttribute("style", "color: blue;");
     onclick = document.getElementById("que").style.display = "none";
     onclick = document.getElementById("que1").style.display = "block";
     onclick = document.getElementById("question2").style.display = "none";
+    
   }
   function myFunction2(){
       onclick = document.getElementById("question1").style.display = "none";
@@ -59,5 +60,19 @@ function myFunction3(){
     onclick = document.getElementById("que1").style.display = "block";
     onclick = document.getElementById("question3").style.display = "block";
   }
-  
+  function myFunction4(){
+    onclick = document.getElementById("que").style.display = "none";
+    onclick = document.getElementById("question2").style.display = "none";
+    onclick = document.getElementById("que1").style.display = "block";
+    onclick = document.getElementById("question3").style.display = "none";
+    onclick = document.getElementById("question4").style.display = "block";
+  }
+  function myFunction5(){
+     onclick = document.getElementById("que").style.display = "none";
+     onclick = document.getElementById("question2").style.display = "none";
+     onclick = document.getElementById("que1").style.display = "block";
+     onclick = document.getElementById("question3").style.display = "none";
+     onclick = document.getElementById("question4").style.display = "none";
+     onclick = document.getElementById("question5").style.display = "block";
+   }
  
