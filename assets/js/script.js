@@ -35,7 +35,7 @@ var answer = function() {
 
 //function to set the timer
 function countdown() {
-  var timeLeft = 60;
+  var timeLeft = 30;
 
   // Use the `setInterval()` method to call a function to be executed every 2000 milliseconds
   var timeInterval = setInterval(function() {
@@ -46,7 +46,7 @@ function countdown() {
         alert("Game over!");
      } 
 
-}, 2000);
+}, 1000);
   
 }
 
