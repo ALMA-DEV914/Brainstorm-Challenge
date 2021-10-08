@@ -2,7 +2,9 @@ var timerEl = document.getElementById('countdown');
 var mainEl = document.getElementById('timer');
 var question1 = document.getElementById("question1");
 var question2 = document.getElementById("question2");
+var scoreEl = document.getElementById("score");
 
+// function for the questions and answer
 var questions = {
     question: [i],
     answer: 2,
@@ -15,7 +17,7 @@ var questions = {
     }
 }
 
-
+// function to count the correct answers and wrong answer and reduce the timer
 for (var i = 0; i < questions.length; i++) {
     answer += questions[i];
 var answer = function() {
@@ -31,27 +33,28 @@ var answer = function() {
     };
   }
 
+//function to set the timer
 function countdown() {
   var timeLeft = 60;
 
-  // Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
+  // Use the `setInterval()` method to call a function to be executed every 2000 milliseconds
   var timeInterval = setInterval(function() {
     timerEl.textContent = timeLeft;
     timeLeft--;
     if(timeLeft < 0){
         clearInterval(timeInterval);
+        alert("Game over!");
      } 
-    
-     
+
 }, 2000);
   
 }
 
-
+scoreEl.setAttribute("style", "color: #8a0b1c;");
 timerEl.setAttribute("style", "color: #8a0b1c; font-size: 25px;");
 mainEl.setAttribute("style", "color: blue;");
   
-
+// function to hide and show all questions sections
   function myFunction(){
     onclick = document.getElementById("que").style.display = "none";
     onclick = document.getElementById("que1").style.display = "block";
@@ -84,4 +87,9 @@ function myFunction3(){
      onclick = document.getElementById("question4").style.display = "none";
      onclick = document.getElementById("question5").style.display = "block";
    }
+
+   function myFunction6(){
+       onclick = document.getElementById("score").style.display = "block";
+   }
+   document.getElementById("score").innerHTML = "3 out of 5"
   countdown();
