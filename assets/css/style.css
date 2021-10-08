@@ -42,8 +42,8 @@ main{
     color: #8a0b1c;
     font-size: 25px;
 }
-.info-list .info{
-     line-height: 1.5;
+.info-list {
+    line-height: 1.5;
     font-size: 22px;
 }
 .btn{
@@ -60,23 +60,6 @@ main{
     border: 2px solid #fff;
 }
 
-.start-btn, .info-section {
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
-}
-.start-btn button {
-    font-size: 25px;
-    font-weight: 500;
-    color: #fff;
-    padding: 15px 30px;
-    border: none;
-    outline: none;
-    border-radius: 5px;
-    background: #000;
-    cursor: pointer;
-}
 p{
     line-height: 1.5;
     font-size: 22px;
@@ -89,14 +72,13 @@ p{
 }
 .options li{
     font-size: 22px;
+    margin: 5px auto;
 }
 form {
-    padding: 15px;
-    font-size: 25px;
     text-align: left;
     
 }
-form input[type = "submit"], .form-btn{
+.form-btn{
     padding: 8px 12px;
     float: right;
     border-radius: 5px;
@@ -105,20 +87,7 @@ form input[type = "submit"], .form-btn{
     color: #fff;
     font-size: 20px;
 }
-.form-btn{
-    padding: 8px 12px;
-    float: right;
-    border-radius: 5px;
-    background: rgb(7, 7, 7);
-    margin: 10px 5px;
-    color: #fff;
-    font-size: 20px;
-}
-.form-btn:hover {
-    background-color: rgb(7, 110, 71);
-    color: rgb(250, 244, 244);
-}
-form input[type= "submit"]:hover{
+.form-btn:hover{
     background-color: rgb(10, 96, 122);
     color: rgb(245, 241, 241);
 }

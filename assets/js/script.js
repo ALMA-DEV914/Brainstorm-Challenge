@@ -3,25 +3,34 @@ var mainEl = document.getElementById('timer');
 var question1 = document.getElementById("question1");
 var question2 = document.getElementById("question2");
 
-var answers = ['3', '1', '2', '1', '3'];
-var questions = "";
+var questions = {
+    question: [i],
+    answer: 2,
+    length: 5,
+    answer: function(){
+        if(answer === "click"){
+            localStorage.getItem("answer", JSON.parse("answer"));
+        }
+        return this.answer;
+    }
+}
+
+
 for (var i = 0; i < questions.length; i++) {
-    answers += questions[i];
-var answers = function() {
-    for (var i = 0; i < questions.length; i++) {
-        answers += question1[i];
-        if (answers === ckecked){
-            alert("Congrats! you got it right!");
+    answer += questions[i];
+var answer = function() {
+        if (answer === ckecked){
+            
         } else if (question1 != checked){
             alert("Your answer is wrong, 5 seconds is deducted from your time left.");
-            timeLeft = timeLeft - 5;
+            timerEl = timeLeft - 5;
         } else{
             localStorage.setItem("checked", JSON.stringify("checked"));
         }
         localStorage.getItem("answers", JSON.parse("answers"));
     };
   }
-}
+
 function countdown() {
   var timeLeft = 60;
 
@@ -37,7 +46,7 @@ function countdown() {
 }, 2000);
   
 }
-countdown();
+
 
 timerEl.setAttribute("style", "color: #8a0b1c; font-size: 25px;");
 mainEl.setAttribute("style", "color: blue;");
@@ -75,4 +84,4 @@ function myFunction3(){
      onclick = document.getElementById("question4").style.display = "none";
      onclick = document.getElementById("question5").style.display = "block";
    }
- 
+  countdown();
