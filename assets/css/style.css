@@ -19,3 +19,44 @@
     height: 200px;
     margin-top: 40px;
   }
+  .main-header{
+      display: flex;
+      justify-content: center;
+      margin-top: 10%;
+      flex-wrap: wrap;
+  }
+  .page-content{
+      background-color: blanchedalmond;
+      padding: 15px;
+      border: 20px solid lightblue;
+      box-shadow: 8px 8px 8px 8px gray;
+  }
+  .page-title {
+      font-size: 35px;
+      text-align: center;
+  }
+  .page-title span{
+      font-size: 25px;
+  }
+  .info-list .info{
+      line-height: 1.5;
+      font-size: 22px;
+  }
+  .page-content button{
+      padding: 8px 16px;
+      background-color: #000;
+      color: #fff;
+      border-radius: 5px;
+      margin: 0 40%;
+      
+  }
+  .quiz-section {
+    background-color: blanchedalmond;
+    padding: 15px;
+    border: 20px solid lightblue;
+    box-shadow: 8px 8px 8px 8px gray;
+    background-color: blanchedalmond;
+    width: 50%;
+    text-align: center;
+    margin: 10% auto;
+  }

@@ -8,7 +8,7 @@
     <title>Brainstorm Challenge</title>
 </head>
 <body>
-<main id="que">
+<main class="main-header" id="main-header">
     <article class="page-content">
         <h1 class="page-title">Brainstorm Challenge<br>
             <span>Some Rules of this Wizard</span></h1>
@@ -18,20 +18,24 @@
             <div class="info"> 3. You can't exit the quiz while you're playing</div>
             <div class="info">4. You can view your score and will be base from your correct answer.</div>
             <div class="info">5. Each wrong answer you key in, your time will deducted of 5 seconds.</div>
-             </div>
+             </div><br><br>
         <!--start quiz button-->
     <button class="btn" onclick = myFunction()>Start the Quiz</button>
         </div>
     </article>
     </section>
     </main>
+    <main class="quiz-section" id="quiz-section">
+        <h1>Timer Starts</h1>
+    <div id="timer"></div>
+    <div id="results"></div>
    <div class="quiz-container">
     <div id="quiz"></div>
     </div>
-    <button id="previous">Pr3vious Question</button>
+    <button id="previous">Previous Question</button>
     <button id="next">Next Question</button>
     <button id="submit">Submit Quiz</button>
-    <div id="results"></div>
+    </main>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
