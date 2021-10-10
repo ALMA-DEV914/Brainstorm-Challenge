@@ -8,19 +8,7 @@
     <title>Brainstorm Challenge</title>
 </head>
 <body>
-    <main id="que">
-       <section class="main-header">
-            <div class="time-score-section">
-            <div class="count">
-            </div>
-            <!--
-            <div class="timer-count">
-                <h2>Timer starts</h2>
-                <p id="countdown"></p>
-                 <p id="timer"></p>
-            </div>
-            </div>
-             -->
+<main id="que">
     <article class="page-content">
         <h1 class="page-title">Brainstorm Challenge<br>
             <span>Some Rules of this Wizard</span></h1>
@@ -38,108 +26,9 @@
     </section>
     </main>
 
-    <main id="que1">
-        <section class="main-header">
-            <div class="time-score-section">
-            <div class="count">
-                <h2>Your score is:</h2>
-                <p id="score"></p>
-            </div>
-            <div class="timer-count">
-                <h2>Timer Starts</h2>
-                <p id="countdown"></p>
-                 <p id="timer"></p>
-            </div>
-            </div>
-
-  <article class="page-content" id="question1">
-      <div class="info-list">
-    <span class="question">What does HTML stands for?</span>
-    <form action="/action_page.php">
-         <input type="radio" id="a" name="a" value="a">
-        <label for="a"> Home Tool Markup Language</label><br>
-      <input type="radio" id="b" name="b" value="b">
-      <label for="b">Hypertext Markup Language</label><br>
-     <input type="radio" id="c" name="c" value="c">
-     <label for="c"> Hyperlinks and Text Markup Language</label><br><br>
-
-<button type="button" class="form-btn" onclick="myFunction2()">Next</button>
-
- </form>
-</div>
-</article>
-
-<article class="page-content" id="question2">
-    <div class="info-list">
-  <span class="question"> Who is making the Web standards?</span>
- 
-<form>
-         <input type="radio" id="a" name="a" value="a">
-        <label for="a">Microsoft</label><br>
-      <input type="radio" id="b" name="b" value="b">
-      <label for="b"> Google </label><br>
-     <input type="radio" id="c" name="c" value="c">
-     <label for="answer3"> The World Wide Web Consortium</label><br><br>
-<button type="button" class="form-btn" onclick=myFunction3()>Next</button>
-
-</form> 
-</div>
-</article>
-
-<article class="page-content" id="question3">
-    <div class="info-list">
-  <span class="question">How can you open a link in a new tab/window?</span>
-
-<form>
-         <input type="radio" id="a" name="a" value="a">
-        <label for="a">< a href = "url" new ></label><br>
-      <input type="radio" id="b" name="b" value="b">
-      <label for="b">< a href="url" target="new" ></label><br>
-     <input type="radio" id="c" name="c" value="c">
-     <label for="c">< a href="url" target="_blank"> </label><br><br>
-<div>
-<button type="button" class="form-btn" onclick="myFunction4()">Next</button>
-</div>
-</form> 
-</div>
-</article>
-
-<article class="page-content" id="question4">
-    <div class="info-list">
-  <span class="question">What does CSS stands for?</span>
- 
-  <form action="/action_page.php">
-         <input type="radio" id="a" name="a" value="a">
-        <label for="a">Cascading Style Sheets</label><br>
-      <input type="radio" id="b" name="b" value="b">
-      <label for="b"> Creative Style Sheets</label><br>
-     <input type="radio" id="c" name="c" value="c">
-     <label for="c"> Computer Style Sheets</label><br><br>
-<button type="button" class="form-btn" onclick="myFunction5()">Next</button>
-
-</form> 
-</div>
-</article>
-
-<article class="page-content" id="question5">
-  <div class="info-list">
-<span class="question"> Where is the correct place to insert the Javascript?</span>
-
-<form>
-         <input type="radio" id="a" name="a" value="a">
-        <label for="a">Both the < head > section and the < body > section</head></label><br>
-      <input type="radio" id="b" name="b" value="b">
-      <label for="b">The < body > section </label></br>
-     <input type="radio" id="c" name="c" value="c">
-     <label for="c"> The < head > section</label><br></br>
-<button type="button" class="form-btn" onclick="myFunction6()">Check your score</button>
-</form> 
-</div>
-</article>
-
-
-</section>
-</main>
+    <div id="quiz"></div>
+   <button id="submit">Submit Quiz</button>
+    <div id="results"></div>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
