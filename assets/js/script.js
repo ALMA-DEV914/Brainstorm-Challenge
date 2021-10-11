@@ -2,7 +2,8 @@
 var timerEl = document.getElementById('timer');
 var quizSection = document.getElementById("quiz-section");
 
-quizSection.setAttribute("style", "display:none;");
+timerEl.setAttribute("style", "color:#8a0b1c; font-size:25px;");
+quizSection.setAttribute("style", "display:none; font-size:22px;");
 
 function myFunction(){
     onclick = document.getElementById("quiz-section").style.display = "block";
@@ -86,12 +87,13 @@ function showResults(){
        // color the answers green
        answerContainers[questionNumber].style.color = 'lightgreen';
        
+    } else if (userAnswer != currentQuestion.correctAnswer){
+        timeInterval = timeLeft - 5;
     }
     // if answer is wrong or blank
     else{
-      // color the answers red
+      // color the answers red and deduct 5 seconds from the time left
       answerContainers[questionNumber].style.color = 'red';
-      timeLeft = timeLeft - 5;
     }
   });
 
@@ -103,6 +105,15 @@ var quizContainer = document.getElementById('quiz');
 var resultsContainer = document.getElementById('results');
 var submitButton = document.getElementById('submit');
 var myQuestions = [
+    {
+      question: "What is Html stand for?",
+      answers: {
+        a: "Hypertext Markup Language",
+        b: "Hyperlinks Markup Language",
+        c: "Hypertool and Text Markup Language "
+       },
+       correctAnswer: "a"
+    },
     {
       question: "Who invented JavaScript?",
       answers: {
@@ -135,12 +146,16 @@ correctAnswer: "d"
 // display quiz right away
 buildQuiz();
 // Pagination
+
 var previousButton = document.getElementById("previous");
 var nextButton = document.getElementById("next");
 var slides = document.querySelectorAll(".slide");
 let currentSlide = 0;
 showSlide(currentSlide);
 
+previousButton.setAttribute("style", "padding: 8px 12px; background-color: blue; color: white; border-radius: 5px;border: 2px solid gray");
+nextButton.setAttribute("style", "padding:8px 12px; color:white; background-color:green; border-radius:5px; border: 2px solid white");
+submitButton.setAttribute("style", "padding:8px 12px; color:white; background-color:red; border-radius:5px; border: 2px solid white");
 showSlide(currentSlide);
 function showSlide(n) {
     slides[currentSlide].classList.remove('active-slide');
