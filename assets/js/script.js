@@ -243,3 +243,4 @@ function showPreviousSlide() {
 previousButton.addEventListener("click", showPreviousSlide);
 nextButton.addEventListener("click", showNextSlide);
 submitButton.addEventListener("click", showResults);
+
