@@ -1,30 +1,37 @@
-//function to set the timer
+//variable to display the timer
 var timerEl = document.getElementById("timer");
+// section to hold the quiz
 var quizSection = document.getElementById("quiz-section");
-
+// function to start the quiz
 function myFunction() {
   onclick = document.getElementById("quiz-section").style.display = "block";
   onclick = document.getElementById("main-header").style.display = "none";
 }
 
-
+// initialize time count
 var initialTime = 60;
 var myTimer;
+//function the countdown the timer
 function countdown() {
   
   // Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
   var timeInterval = setInterval(function () {
+    //set the timer element to hold the timer
     timerEl.textContent = initialTime;
+    // timer running down to 1 second
     initialTime--;
+    // if timer is less than zero clear interval
     if (initialTime < 0){
      clearInterval(timeInterval);
+     //alert the user it's game over
       alert("Game over!");
       
     }
+    // set the clock to run every seconds
   }, 1000);
 }
 countdown();
-
+// function to build the quiz
 function buildQuiz() {
   // variable to store the HTML output
   var output = [];
@@ -99,7 +106,7 @@ var resultsContainer = document.getElementById("results");
 var submitButton = document.getElementById("submit");
 var replayButton = document.getElementById("replay");
 // create a functions for the questions and answers selectors
-
+// create arrays for the questions
 var myQuestions = [
   {
     question: "What does Html stand for?",
@@ -203,14 +210,17 @@ var myQuestions = [
 buildQuiz();
 
 
-//pagination
+//pagination for the slides buttons
 var previousButton = document.getElementById("previous");
 var nextButton = document.getElementById("next");
 var slides = document.querySelectorAll(".slide");
+// set currentSlide function to start at zero
 let currentSlide = 0;
+// style the results container
 resultsContainer.setAttribute("style", "color:blue;");
-
+// style the timer container
 timerEl.setAttribute("style", "color:#8a0b1c; font-size:25px;");
+// hide the quiz section before starts
 quizSection.setAttribute("style", "display:none; font-size:22px;");
 // style the previous, next and submit buttons
 previousButton.setAttribute(
@@ -232,26 +242,30 @@ function showSlide(n) {
   slides[currentSlide].classList.remove("active-slide");
   slides[n].classList.add("active-slide");
   currentSlide = n;
+  // if current slide is zero display nothing
   if (currentSlide === 0) {
     previousButton.style.display = "none";
   } else {
+    // if it's running the quiz display 
     previousButton.style.display = "inline-block";
   }
+  // if the question end, hide the next button and replace it with submit button
   if (currentSlide === slides.length - 1) {
     nextButton.style.display = "none";
     submitButton.style.display = "inline-block";
     
   } else {
+    //if still running hide the submit button
     nextButton.style.display = "inline-block";
     submitButton.style.display = "none";
     
   }
 }
-
+// function to slide the questions forward
 function showNextSlide() {
   showSlide(currentSlide + 1);
 }
-
+// function to return to the previous questions
 function showPreviousSlide() {
   showSlide(currentSlide - 1);
 }
