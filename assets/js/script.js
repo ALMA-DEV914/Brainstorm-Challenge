@@ -6,21 +6,25 @@ function myFunction() {
   onclick = document.getElementById("quiz-section").style.display = "block";
   onclick = document.getElementById("main-header").style.display = "none";
 }
-var initialTime = 60;
 
+
+var initialTime = 60;
+var myTimer;
 function countdown() {
+  
   // Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
   var timeInterval = setInterval(function () {
     timerEl.textContent = initialTime;
     initialTime--;
-    if (initialTime < 0) {
-      clearInterval(timeInterval);
+    if (initialTime < 0){
+     clearInterval(timeInterval);
       alert("Game over!");
+      
     }
   }, 1000);
 }
-
 countdown();
+
 function buildQuiz() {
   // variable to store the HTML output
   var output = [];
@@ -60,33 +64,42 @@ function showResults() {
   var answerContainers = quizContainer.querySelectorAll(".answers");
   // keep track of user's answers
   let numCorrect = 0;
+  
   // for each question...
   myQuestions.forEach((currentQuestion, questionNumber) => {
     // find selected answer
     var answerContainer = answerContainers[questionNumber];
     var selector = `input[name=question${questionNumber}]:checked`;
     var userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
     // if answer is correct
     if (userAnswer === currentQuestion.correctAnswer) {
       numCorrect++;
+      
       // color the answers green
       answerContainers[questionNumber].style.color = "green";
       console.log(userAnswer);
     }
     // if answer is wrong or blank
     else {
-      initialTime = initialTime - 5;
+      alert("Question number " + questionNumber + " answer is wrong, 5 seconds was deducted,  current time left is " + initialTime);
+       initialTime = initialTime - 5;
       answerContainers[questionNumber].style.color = "red";
+      console.log(initialTime);
     }
-  });
 
+  });
+    
   // show number of correct answers out of total
   resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+  
 }
 var quizContainer = document.getElementById("quiz");
 var resultsContainer = document.getElementById("results");
 var submitButton = document.getElementById("submit");
+var replayButton = document.getElementById("replay");
 // create a functions for the questions and answers selectors
+
 var myQuestions = [
   {
     question: "What does Html stand for?",
@@ -188,6 +201,8 @@ var myQuestions = [
 ];
 // Show the quiz section
 buildQuiz();
+
+
 //pagination
 var previousButton = document.getElementById("previous");
 var nextButton = document.getElementById("next");
@@ -210,9 +225,9 @@ submitButton.setAttribute(
   "style",
   "padding:8px 12px; color:white; background-color:red; border-radius:5px; border: 2px solid white"
 );
-
 // function to show the questions
 showSlide(currentSlide);
+
 function showSlide(n) {
   slides[currentSlide].classList.remove("active-slide");
   slides[n].classList.add("active-slide");
@@ -225,9 +240,11 @@ function showSlide(n) {
   if (currentSlide === slides.length - 1) {
     nextButton.style.display = "none";
     submitButton.style.display = "inline-block";
+    
   } else {
     nextButton.style.display = "inline-block";
     submitButton.style.display = "none";
+    
   }
 }
 
@@ -243,4 +260,3 @@ function showPreviousSlide() {
 previousButton.addEventListener("click", showPreviousSlide);
 nextButton.addEventListener("click", showNextSlide);
 submitButton.addEventListener("click", showResults);
-
