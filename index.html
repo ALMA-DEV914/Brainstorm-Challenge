@@ -8,32 +8,37 @@
     <title>Brainstorm Challenge</title>
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
 </head>
-
+<!--body-->
 <body>
+    <!--header-->
     <header>
         <article class="page-content">
             <img src="./assets/images/quiz.jpg" alt="quiz">
             <h1 class="page-title">Brainstorm Challenge<br>
                 <span>Some Rules of this Wizard</span></h1>
                 <div class="info-list">
-                <div class="info">1. You will have only <span>90 seconds</span> to answer the questions.</div>
+                <div class="info">1. You will have only <span>2 minutes</span> to answer the questions.</div>
                 <div class="info"> 2. You can't exit the quiz while you're playing</div>
-                <div class="info">3. You can view your score and will be base from your correct answer.</div>
-                <div class="info">4. Each wrong answer you key in, your time will deducted of 5 seconds.</div>
+                <div class="info">3. You can view your score and will be base from your correct answer and speed.</div>
+                <div class="info">4. Each wrong answer you key in, your timer will deducted of 5 seconds.</div>
                 </div>
                 </article>
     </header>
 
     <main>
+        <!--score container-->
         <div class="score-container">
             <h3>Score / Timer: <span class="time-score">0</span></h3>
         </div>
+        <!--start button-->
         <div>
             <button class="button" type="button">Start Quiz</button>
         </div>
         <section class="question-container hide-element">
+            <!--questions will appear here-->
             <h2 class="question"></h2>
-            <ol class="given-answers">
+            <!--multiple choices section-->
+            <ul class="given-answers">
                 <li><span class="user-choice"></span></li>
                 <li><span class="user-choice"></span></li>
                 <li><span class="user-choice"></span></li>
@@ -44,11 +49,13 @@
                 <li><span class="user-choice"></span></li>
                 <li><span class="user-choice"></span></li>
                 <li><span class="user-choice"></span></li>
-            </ol>
+            </ul>
+            
             <div>
                 <h2 class="user-feedback"></h2>
             </div>
         </section>
+        <!--game container section-->
         <section class="game-over-container hide-element">
             <div class="game-over-content">
                 <div>
@@ -60,6 +67,7 @@
                         <input class="button button-submit" type="button" value="Submit">
                     </form>
                 </div>
+                <!--section of getting users scores-->
                 <div>
                     <h1>High Scores</h1>
                     <table class="high-scores">
@@ -68,6 +76,7 @@
                             <th>Score</th>
                         </tr>
                     </table>
+                    <!--buttons to clear the score history and restart the game-->
                     <form class="user-buttons">
                         <input class="button clear-scores" type="button" value="Clear">
                         <input class="button restart-quiz" type="button" value="Restart">
@@ -76,12 +85,12 @@
             </div>
         </section>
     </main>
-
+<!--footer-->
     <footer>
       <h3>Coding challenge by Alma Braun at UC Berkeley Bootcamp 2021</h3>
     </footer>
 
-
+<!--script file to manipulate the page functionalities-->
     <script src="./assets/js/script.js"></script>
 </body>
 

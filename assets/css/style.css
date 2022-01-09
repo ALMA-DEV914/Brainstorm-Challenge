@@ -2,10 +2,10 @@
 
 :root {
     --main-feel-color: rgb(16, 17, 17);
-    --darker-offset-color: #27afc7;
-    --dark-color: #a1cf36;
+    --darker-offset-color: #19b3ce;
+    --dark-color: blanchedalmond;
     --box-shadow-color: rgba(0, 0, 0, 0.56);
-    --dark-hover: #1593c5;
+    --dark-hover: #15c5a8;
 }
 
 
@@ -36,7 +36,7 @@ header {
     font-size: 22px;
 }
 
-ol,
+ul,
 li {
     padding: 0 0 5px 0.75em;
     margin-left: 1em;
@@ -56,7 +56,6 @@ main {
 
 footer {
     padding: 20px;
-    height: 100%;
     text-align: center;
     background-color: azure;
 }
@@ -124,21 +123,22 @@ footer {
 .final-score,
 .user-feedback {
     font-size: 30px;
-    color: rgb(28, 14, 223);
+    color: var(--darker-offset-color)
 }
 
 .user-entry {
     margin: 1.5em 0 1.5em 0;
-    border: 1px solid black;
+   
+    
 }
 
 .user-choice {
     padding: 5px 10px 5px 10px;
-    transition: transform .2s;
+    
 }
 
 .user-choice:hover {
-    background-color: #2e9e5d;
+    background-color: #71e6d2;
     border-radius: 5px;
     border: 2px solid var(--main-feel-color);
     font-size: 24px;

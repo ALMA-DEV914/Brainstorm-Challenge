@@ -1,4 +1,4 @@
-
+//craete an array of questions giving the choice as boolean
 let questions = [{
     question: "What does Html stand for?",
     answers: [{
@@ -202,7 +202,7 @@ var restartQuizButton = document.querySelector(".restart-quiz");
 
 
 // Game Variables
-var timeScore = 90;
+var timeScore = 120;
 var answerWaitTime = 1000;
 var scoreBoardSave = {
     score: "",
