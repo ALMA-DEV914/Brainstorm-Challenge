@@ -1,43 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
     <title>Brainstorm Challenge</title>
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
 </head>
+
 <body>
-<main class="main-header" id="main-header">
-    <article class="page-content">
-        <h1 class="page-title">Brainstorm Challenge<br>
-            <span>Some Rules of this Wizard</span></h1>
-            <div class="info-list">
-            <div class="info">1. You will have only <span>60 seconds</span> to answer the questions.</div>
-            <div class="info"> 2. You can't exit the quiz while you're playing</div>
-            <div class="info">3. You can view your score and will be base from your correct answer.</div>
-            <div class="info">4. Each wrong answer you key in, your time will deducted of 5 seconds.</div>
-             </div><br><br>
-        <!--start quiz button-->
-    <button class="btn" onclick = myFunction()>Start the Quiz</button>
+    <header>
+        <article class="page-content">
+            <img src="./assets/images/quiz.jpg" alt="quiz">
+            <h1 class="page-title">Brainstorm Challenge<br>
+                <span>Some Rules of this Wizard</span></h1>
+                <div class="info-list">
+                <div class="info">1. You will have only <span>90 seconds</span> to answer the questions.</div>
+                <div class="info"> 2. You can't exit the quiz while you're playing</div>
+                <div class="info">3. You can view your score and will be base from your correct answer.</div>
+                <div class="info">4. Each wrong answer you key in, your time will deducted of 5 seconds.</div>
+                </div>
+                </article>
+    </header>
+
+    <main>
+        <div class="score-container">
+            <h3>Score / Timer: <span class="time-score">0</span></h3>
         </div>
-    </article>
-    </section>
+        <div>
+            <button class="button" type="button">Start Quiz</button>
+        </div>
+        <section class="question-container hide-element">
+            <h2 class="question"></h2>
+            <ol class="given-answers">
+                <li><span class="user-choice"></span></li>
+                <li><span class="user-choice"></span></li>
+                <li><span class="user-choice"></span></li>
+                <li><span class="user-choice"></span></li>
+                <li><span class="user-choice"></span></li>
+                <li><span class="user-choice"></span></li>
+                <li><span class="user-choice"></span></li>
+                <li><span class="user-choice"></span></li>
+                <li><span class="user-choice"></span></li>
+                <li><span class="user-choice"></span></li>
+            </ol>
+            <div>
+                <h2 class="user-feedback"></h2>
+            </div>
+        </section>
+        <section class="game-over-container hide-element">
+            <div class="game-over-content">
+                <div>
+                    <h1>Game Over!</h1>
+                    <h2>Final Score: <span class="final-score"></span></h2>
+
+                    <form class="user-entry">
+                        <input class="initial-entry" type="text" placeholder="Enter your initial" maxlength="10">
+                        <input class="button button-submit" type="button" value="Submit">
+                    </form>
+                </div>
+                <div>
+                    <h1>High Scores</h1>
+                    <table class="high-scores">
+                        <tr>
+                            <th>Initials</th>
+                            <th>Score</th>
+                        </tr>
+                    </table>
+                    <form class="user-buttons">
+                        <input class="button clear-scores" type="button" value="Clear">
+                        <input class="button restart-quiz" type="button" value="Restart">
+                    </form>
+                </div>
+            </div>
+        </section>
     </main>
-    <main class="quiz-section" id="quiz-section">
-        <h1>Timer Starts</h1>
-    <div id="timer"></div> 
-    <div id="initialTime"></div>
-    <h2>Your score is:</h2>
-    <div id="results"></div>
-   <div class="quiz-container">
-    <div id="quiz"></div>
-    </div>
-    <button id="previous">Previous Question</button>
-    <button id="next">Next Question</button>
-    <button id="submit">Submit Quiz</button>
-    
-    </main>
+
+    <footer>
+      <h3>Coding challenge by Alma Braun at UC Berkeley Bootcamp 2021</h3>
+    </footer>
+
+
     <script src="./assets/js/script.js"></script>
 </body>
+
 </html>

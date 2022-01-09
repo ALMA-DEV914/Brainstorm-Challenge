@@ -1,276 +1,365 @@
-//variable to display the timer
-var timerEl = document.getElementById("timer");
-// section to hold the quiz
-var quizSection = document.getElementById("quiz-section");
-// function to start the quiz
-function myFunction() {
-  onclick = document.getElementById("quiz-section").style.display = "block";
-  onclick = document.getElementById("main-header").style.display = "none";
-}
 
-// initialize time count
-var initialTime = 60;
-var myTimer;
-//function the countdown the timer
-function countdown() {
-  
-  // Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
-  var timeInterval = setInterval(function () {
-    //set the timer element to hold the timer
-    timerEl.textContent = initialTime;
-    // timer running down to 1 second
-    initialTime--;
-    // if timer is less than zero clear interval
-    if (initialTime < 0){
-     clearInterval(timeInterval);
-     //alert the user it's game over
-      alert("Game over!");
-      
-    }
-    // set the clock to run every seconds
-  }, 1000);
-}
-countdown();
-// function to build the quiz
-function buildQuiz() {
-  // variable to store the HTML output
-  var output = [];
-
-  // for each question...
-  myQuestions.forEach((currentQuestion, questionNumber) => {
-    // variable to store the list of possible answers
-    var answers = [];
-
-    // and for each available answer...
-    for (letter in currentQuestion.answers) {
-      // ...add an HTML radio button
-      answers.push(
-        `<label>
-              <input type="radio" name="question${questionNumber}" value="${letter}">
-              ${letter} :
-              ${currentQuestion.answers[letter]}
-              </label>`
-      );
-    }
-
-    // add this question and its answers to the output
-    output.push(
-      `<div class ="slide">
-              <div class="question"> ${currentQuestion.question} </div>
-              <div class="answers"> ${answers.join("")} </div>
-              </div>`
-    );
-  });
-
-  // finally combine our output list into one string of HTML and put it on the page
-  quizContainer.innerHTML = output.join("");
-}
-
-function showResults() {
-  // gather answer containers from our quiz
-  var answerContainers = quizContainer.querySelectorAll(".answers");
-  // keep track of user's answers
-  let numCorrect = 0;
-  
-  // for each question...
-  myQuestions.forEach((currentQuestion, questionNumber) => {
-    // find selected answer
-    var answerContainer = answerContainers[questionNumber];
-    var selector = `input[name=question${questionNumber}]:checked`;
-    var userAnswer = (answerContainer.querySelector(selector) || {}).value;
-
-    // if answer is correct
-    if (userAnswer === currentQuestion.correctAnswer) {
-      numCorrect++;
-      
-      // color the answers green
-      answerContainers[questionNumber].style.color = "green";
-      console.log(userAnswer);
-    }
-    // if answer is wrong or blank
-    else {
-      alert("Question number " + questionNumber + " answer is wrong, 5 seconds was deducted,  current time left is " + initialTime);
-       initialTime = initialTime - 5;
-      answerContainers[questionNumber].style.color = "red";
-      console.log(initialTime);
-    }
-
-  });
-    
-  // show number of correct answers out of total
-  resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
-  
-}
-var quizContainer = document.getElementById("quiz");
-var resultsContainer = document.getElementById("results");
-var submitButton = document.getElementById("submit");
-var replayButton = document.getElementById("replay");
-// create a functions for the questions and answers selectors
-// create arrays for the questions
-var myQuestions = [
-  {
+let questions = [{
     question: "What does Html stand for?",
-    answers: {
-      a: "Hypertext Markup Language",
-      b: "Hyperlinks and Text Markup Language",
-      c: "Home Tool Markup Language ",
+    answers: [{
+      "textContent": "Hypertext Markup Language",
+      isCorrect: true
     },
-    correctAnswer: "a",
+      {
+      "textContent": "Hyperlinks and Text Markup Language",
+      isCorrect: false
+      },
+      {
+      "textContent": "Home Tool Markup Language ",
+      isCorrect:false
   },
+]
+},
   {
     question: "Who is making the Web standards?",
-    answers: {
-      a: "Google",
-      b: "Mozilla",
-      c: "Microsoft",
-      d: "The World Wide Web Consortium",
+    answers: [{
+      "textContent": "Google",
+      isCorrect: false
     },
-    correctAnswer: "d",
+    {
+      "textContent": "Mozilla",
+      isCorrect: false
+    },
+      {
+      "textContent": "Microsoft",
+      isCorrect: false
+    },
+      {
+      "textContent": "The World Wide Web Consortium",
+      isCorrect: true
+    },
+  ]
   },
   {
     question: "What does CSS stand for?",
-    answers: {
-      a: "Colorful Style Sheets",
-      b: "Computer Style Sheets",
-      c: "Creative Style Sheets",
-      d: "Cascading Style Sheets",
+    answers: [{
+      "textContent": "Colorful Style Sheets",
+      isCorrect: false
     },
-    correctAnswer: "d",
+    {
+      "textContent": "Computer Style Sheets",
+      isCorrect: false
+    },
+    {
+      "textContent" : "Creative Style Sheets",
+      isCorrect: false
+    },
+    {
+    "textContent": "Cascading Style Sheets",
+    isCorrect: true
+    },
+    ]
   },
   {
     question:
       "Where in an HTML document is the correct place to refer to an external style sheet?",
-    answers: {
-      a: "In the < body > section",
-      b: "At the end of the document",
-      c: "In the < head > section",
+    answers: [{
+      "textContent": "In the < body > section",
+      isCorrect: false
     },
-    correctAnswer: "c",
+      {
+        "textContent": "At the end of the document",
+        isCorrect: false
+      },
+      {
+        "textContent": "In the < head > section",
+        isCorrect: true
+      },
+  ]
   },
   {
     question: "Whict is the correct CSS syntax?",
-    answers: {
-      a: "{body; color:black;}",
-      b: "body: color:black;",
-      c: "{body:color=black;}",
-      d: "body{color:black;}",
+    answers: [{
+      "textContent" : "{body; color:black;}",
+      isCorrect: false
     },
-    correctAnswer: "d",
+    {
+      "textContent": "body: color:black;",
+      isCorrect: false
+    },
+    {
+      "textContent": "{body:color=black;}",
+      isCorrect: false
+    },
+    {
+      "textContent": "body{color:black;}",
+      isCorrect: true
+    },
+  ]
   },
   {
     question:
       "What is the correct syntax for referring to an external script called 'xxx.js'?",
-    answers: {
-      a: "< script name = 'xxx.js' >",
-      b: "< script href = 'xxx.js' >",
-      c: "< script src = 'xxx.js' >",
+    answers: [{
+      "textContent": "< script name = 'xxx.js' >",
+      isCorrect: false
     },
-    correctAnswer: "c",
+    {
+      "textContent" : "< script href = 'xxx.js' >",
+      isCorrect: false
+    },
+    {
+      "textContent": "< script src = 'xxx.js' >",
+      isCorrect: true
+    },
+  ]
   },
   {
     question: "Inside which HTML element do we put the JavaScript?",
-    answers: {
-      a: "< scripting >",
-      b: "< script >",
-      c: "javascript",
-      d: "< js >",
+    answers: [{
+      "textContent" : "< scripting >",
+      isCorrect: false
     },
-    correctAnswer: "b",
+    {
+      "textContent": "< script >",
+      isCorrect: true
+    },
+    {
+      "textContent": "javascript",
+      isCorrect: false
+    },
+    {
+      "textContent": "< js >",
+      isCorrect: false
+    },
+  ]
   },
   {
     question: "Who invented JavaScript?",
-    answers: {
-      a: "Douglas Crockford",
-      b: "Sheryl Sandberg",
-      c: "Brendan Eich",
+    answers: [{
+      "textContent": "Douglas Crockford",
+      isCorrect: false
     },
-    correctAnswer: "c",
+    {
+      "textContent": "Sheryl Sandberg",
+      isCorrect: false
+    },
+    {
+      "textContent": "Brendan Eich",
+      isCorrect: true
+    },
+  ]
   },
   {
     question: "Which one of these is a JavaScript package manager?",
-    answers: {
-      a: "Node.js",
-      b: "TypeScript",
-      c: "npm",
+    answers: [{
+      "textContent" : "Node.js",
+      isCorrect: false
     },
-    correctAnswer: "c",
+    {
+      "textContent": "TypeScript",
+      isCorrect: false
+    },
+    {
+      "textContent": "npm",
+      isCorrect: true
+    },
+  ]
   },
   {
     question: "Which tool can you use to ensure code quality?",
-    answers: {
-      a: "Angular",
-      b: "jQuery",
-      c: "RequireJS",
-      d: "ESLint",
+    answers: [{
+      "textContent": "Angular",
+      isCorrect: false
     },
-    correctAnswer: "d",
+      {
+      "textContent": "jQuery",
+      isCorrect: false
+    },
+    {
+      "textContent": "RequireJS",
+      isCorrect: false
+    },
+    {
+      "textContent": "ESLint",
+      isCorrect: true
+    },
+  ]
   },
 ];
-// Show the quiz section
-buildQuiz();
+//get DOM element objects needed
+var startButton = document.querySelector(".button");
+var question = document.querySelector(".question");
+var questionContainer = document.querySelector(".question-container");
+var answers = document.querySelectorAll(".user-choice");
+var score = document.querySelector(".time-score");
+var finalScore = document.querySelector(".final-score");
+var gameOverContainer = document.querySelector(".game-over-container");
+var scoreContainer = document.querySelector(".score-container");
+var userFeedback = document.querySelector(".user-feedback");
+var givenAnswers = document.querySelector(".given-answers");
+var initialEntry = document.querySelector(".initial-entry");
+var submitButton = document.querySelector(".button-submit");
+var userEntry = document.querySelector(".user-entry");
+var highScoreBoard = document.querySelector(".high-scores");
+var clearScoreButton = document.querySelector(".clear-scores");
+var restartQuizButton = document.querySelector(".restart-quiz");
 
 
-//pagination for the slides buttons
-var previousButton = document.getElementById("previous");
-var nextButton = document.getElementById("next");
-var slides = document.querySelectorAll(".slide");
-// set currentSlide function to start at zero
-let currentSlide = 0;
-// style the results container
-resultsContainer.setAttribute("style", "color:blue;");
-// style the timer container
-timerEl.setAttribute("style", "color:#8a0b1c; font-size:25px;");
-// hide the quiz section before starts
-quizSection.setAttribute("style", "display:none; font-size:22px;");
-// style the previous, next and submit buttons
-previousButton.setAttribute(
-  "style",
-  "padding: 8px 12px; background-color: blue; color: white; border-radius: 5px;border: 2px solid gray"
-);
-nextButton.setAttribute(
-  "style",
-  "padding:8px 12px; color:white; background-color:green; border-radius:5px; border: 2px solid white"
-);
-submitButton.setAttribute(
-  "style",
-  "padding:8px 12px; color:white; background-color:red; border-radius:5px; border: 2px solid white"
-);
-// function to show the questions
-showSlide(currentSlide);
+// Game Variables
+var timeScore = 90;
+var answerWaitTime = 1000;
+var scoreBoardSave = {
+    score: "",
+    initials: ""
+};
 
-function showSlide(n) {
-  slides[currentSlide].classList.remove("active-slide");
-  slides[n].classList.add("active-slide");
-  currentSlide = n;
-  // if current slide is zero display nothing
-  if (currentSlide === 0) {
-    previousButton.style.display = "none";
-  } else {
-    // if it's running the quiz display 
-    previousButton.style.display = "inline-block";
-  }
-  // if the question end, hide the next button and replace it with submit button
-  if (currentSlide === slides.length - 1) {
-    nextButton.style.display = "none";
-    submitButton.style.display = "inline-block";
-    
-  } else {
-    //if still running hide the submit button
-    nextButton.style.display = "inline-block";
-    submitButton.style.display = "none";
-    
-  }
-}
-// function to slide the questions forward
-function showNextSlide() {
-  showSlide(currentSlide + 1);
-}
-// function to return to the previous questions
-function showPreviousSlide() {
-  showSlide(currentSlide - 1);
+//get random array for question display
+var randomOrder = getRandomIntArray(0, questions.length);
+
+//add event listeners to each answer element
+for (let i = 0; i < answers.length; i++) {
+    answers[i].addEventListener("click", function() {
+        //show feedback
+        userFeedback.classList.remove('hide-element');
+        //get whether correct
+        var isCorrect = answers[i].getAttribute("data-boolean");
+        //convert string to boolean
+        var isCorrectBool = (isCorrect.toLowerCase() === 'true')
+        if (isCorrectBool) {
+            userFeedback.innerHTML = "Correct";
+        } else {
+            timeScore = timeScore - 5;
+            userFeedback.innerHTML = "Incorrect, minus 5 seconds";
+        }
+        givenAnswers.classList.add('hide-element');
+        //add timeout so user can see answer feedback
+        setTimeout(function() {
+            userFeedback.classList.add('hide-element');
+            givenAnswers.classList.remove('hide-element');
+            getNextQuestionOrEnd();
+        }, answerWaitTime);
+    });
 }
 
-// on submit, show results
-previousButton.addEventListener("click", showPreviousSlide);
-nextButton.addEventListener("click", showNextSlide);
-submitButton.addEventListener("click", showResults);
+//start quiz button event listener
+startButton.addEventListener("click", function() {
+    //hide quiz button, show quiz container HTML
+    startButton.classList.add('hide-element');
+    questionContainer.classList.remove('hide-element');
+    //start score/timer
+    scoreTimerCountdown();
+    //execute the quiz in random order
+    getNextQuestionOrEnd();
+});
+4
+
+//submit initials/score button
+submitButton.addEventListener("click", function() {
+    //save final score to game (if not grab final-score timer value)
+    scoreBoardSave.score = finalScore.innerHTML;
+    //save initials
+    scoreBoardSave.initials = initialEntry.value;
+    //save to local storage
+    addLocalStorageEntry(scoreBoardSave);
+    //render on score card
+    generateTable();
+    //hide input fields
+    userEntry.classList.add('hide-element');
+    finalScore.parentElement.classList.add('hide-element');
+});
+
+//clear local storage entry
+clearScoreButton.addEventListener("click", function() {
+    existingEntries = [];
+    localStorage.setItem("allScoreEntries", JSON.stringify(existingEntries));
+    generateTable();
+});
+
+//restart game
+restartQuizButton.addEventListener("click", function() {
+    window.location.href = "./index.html";
+});
+
+//generate populated table
+function generateTable() {
+    //clear current render
+    highScoreBoard.innerHTML = "<tr><th>Initials</th><th>Score</th></tr>";
+    //get parsed array of score objects
+    var allSavedScores = JSON.parse(localStorage.getItem("allScoreEntries"));
+    //generate each score
+    for (let i = 0; i < allSavedScores.length; i++) {
+        const element = allSavedScores[i];
+        highScoreBoard.innerHTML += "<tr><td>" + element.initials + "</td><td>" + element.score + "</td></tr>";
+    }
+}
+
+//pull array from local storage and add object entries to it
+function addLocalStorageEntry(scoreBoardObject) {
+    // Parse any JSON previously stored in allEntries
+    var existingEntries = JSON.parse(localStorage.getItem("allScoreEntries"));
+    if (existingEntries == null) {
+        existingEntries = [];
+    }
+    localStorage.setItem("userEntry", JSON.stringify(scoreBoardObject));
+    //add object to array
+    existingEntries.push(scoreBoardObject);
+    //sort array before adding to local storage 
+    existingEntries.sort(function(b, a) {
+        return parseFloat(a.score) - parseFloat(b.score);
+    });
+    // Save allEntries back to local storage
+    localStorage.setItem("allScoreEntries", JSON.stringify(existingEntries));
+};
+
+//Get an array of random unique integers between min and max
+function getRandomIntArray(min, max) {
+    var returnSet = new Set();
+    //There may be a more efficient way to do this as it will run potentially more than max variable times
+    while (returnSet.size < max) {
+        var randomInt = Math.floor(Math.random() * (max - min) + min);
+        returnSet.add(randomInt);
+    };
+    return Array.from(returnSet);
+}
+
+//Countdown Timer
+function scoreTimerCountdown() {
+    //set score 1st for better responsiveness then initiate countdown
+    score.innerHTML = timeScore;
+    var countDown = setInterval(function() {
+        timeScore--;
+        score.innerHTML = timeScore;
+        if (timeScore <= 0) {
+            //setInterval() method returns an ID which can be used by the clearInterval() method to stop the interval.
+            clearInterval(countDown);
+            getNextQuestionOrEnd();
+        }
+    }, 1000);
+}
+
+function getNextQuestionOrEnd() {
+    //check if there are remaining random array values and that the score is above zero
+    if (randomOrder.length !== 0 && timeScore > 0) {
+        //get last item and remove it from array
+        var randomSelected = parseInt(randomOrder.pop());
+        //add question to DOM
+        question.innerHTML = questions[randomSelected].question;
+        for (let i = 0; i < answers.length; i++) {
+            //if there are more answers than HTML elements to use them, hide the HTML element and don't populate anything
+            if (typeof questions[randomSelected].answers[i] === 'undefined') {
+                answers[i].parentElement.classList.add('hide-element');
+            } else {
+                answers[i].innerHTML = questions[randomSelected].answers[i].textContent;
+                answers[i].setAttribute("data-boolean", questions[randomSelected].answers[i].isCorrect);
+                answers[i].parentElement.classList.remove('hide-element');
+            }
+        }
+    } else { //else there are no more questions
+        //if the final score goes below zero set to zero
+        if (timeScore < 0) {
+            timeScore = 0;
+        }
+        // show game over screen and set final score
+        finalScore.innerHTML = timeScore;
+        questionContainer.classList.add('hide-element');
+        scoreContainer.classList.add('hide-element');
+        gameOverContainer.classList.remove('hide-element');
+        generateTable();
+    }
+}
