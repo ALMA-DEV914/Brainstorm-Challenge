@@ -25,6 +25,5 @@ JQuery
 
 
 ### The Application Snapshot
-![20211018_115154](https://user-images.githubusercontent.com/65073138/137791616-d2e073af-837e-4adf-8922-0593fc71f706.jpg)
-![20211018_115205](https://user-images.githubusercontent.com/65073138/137791634-ed1ff612-e37f-44c5-9e40-3a9149216a10.jpg)
-![20211018_115255](https://user-images.githubusercontent.com/65073138/137791649-e1afb0ee-03a5-4810-b7cc-13c35ddd013b.jpg)
+<img width="1765" alt="Screen Shot 2022-01-09 at 1 57 49 PM" src="https://user-images.githubusercontent.com/65073138/148702659-34b2c517-6757-45bf-838e-bac29a4a36c6.png">
+<img width="1788" alt="Screen Shot 2022-01-09 at 1 58 39 PM" src="https://user-images.githubusercontent.com/65073138/148702663-1e9c23f6-a512-46b0-b717-ef13959eda01.png">
