@@ -11,29 +11,30 @@
 <!--body-->
 <body>
     <!--header-->
+    <div class="container">
     <header>
         <article class="page-content">
             <img src="./assets/images/quiz.jpg" alt="quiz">
-            <h1 class="page-title">Brainstorm Challenge<br>
+            <h1 class="page-title">
                 <span>Some Rules of this Wizard</span></h1>
                 <div class="info-list">
                 <div class="info">1. You will have only <span>2 minutes</span> to answer the questions.</div>
                 <div class="info"> 2. You can't exit the quiz while you're playing</div>
                 <div class="info">3. You can view your score and will be base from your correct answer and speed.</div>
-                <div class="info">4. Each wrong answer you key in, your timer will deducted of 5 seconds.</div>
+                <div class="info">4. Each wrong answer you key in, your timer will be deducted of 5 seconds.</div>
                 </div>
+            <div>
+                <button class="button" type="button">Start Quiz</button>
+            </div>
                 </article>
     </header>
 
-    <main>
+    <main id="main">
         <!--score container-->
         <div class="score-container">
             <h3>Score / Timer: <span class="time-score">0</span></h3>
         </div>
         <!--start button-->
-        <div>
-            <button class="button" type="button">Start Quiz</button>
-        </div>
         <section class="question-container hide-element">
             <!--questions will appear here-->
             <h2 class="question"></h2>
@@ -85,6 +86,7 @@
             </div>
         </section>
     </main>
+    </div>
 <!--footer-->
     <footer>
       <h3>Coding challenge by Alma Braun at UC Berkeley Bootcamp 2021</h3>
